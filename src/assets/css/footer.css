@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .footer-link {
+    @apply hover:text-blue-500 text-xs;
+  }
+}
