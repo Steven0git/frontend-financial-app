@@ -6,7 +6,7 @@ import Main from "common/Main.jsx";
 const MainLayout = ({ children }) => {
   return (
     <>
-      <div className="drawer">
+      <div className="drawer w-screen overflow-x-hidden">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           <Header></Header>

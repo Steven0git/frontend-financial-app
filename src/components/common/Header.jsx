@@ -4,7 +4,7 @@ const Header = ({ children }) => {
   return (
     <>
       {/* Navbar */}
-      <div className="navbar w-full">
+      <div className="navbar w-full" data-theme="dracula">
         <div className="flex-none lg:hidden">
           <label
             htmlFor="my-drawer-3"
@@ -32,7 +32,7 @@ const Header = ({ children }) => {
             Personal Accounting
           </span>
         </a>
-        <div className="hidden flex-none lg:block">
+        <div data-theme="dracula" className="hidden flex-none lg:block">
           <ul className="menu menu-horizontal">
             {/* Navbar menu content here */}
             <li>

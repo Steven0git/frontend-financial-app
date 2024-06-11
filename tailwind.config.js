@@ -12,7 +12,8 @@ export default {
       "cupcake",
       "dracula",
       "sunset",
-      "business"
+      "business",
+      'helloween'
     ],
   },
   plugins: [require("daisyui")],
