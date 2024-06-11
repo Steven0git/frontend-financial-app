@@ -30,14 +30,23 @@ export default defineConfig({
      */
     alias: [
       { find: "@", replacement: root },
+      
+      //assets part
       { find: "css", replacement: resolve(root, "assets", "css") },
-      { find: "+", replacement: resolve(root, "components") },
-      { find: "page", replacement: resolve(root, "page") },
-      { find: "ui", replacement: resolve(root, "lib", "ui") },
-      { find: "core", replacement: resolve(root, "lib", "core") },
       { find: "img", replacement: resolve(root, "public", "image") },
+      //components part
+      { find: "component", replacement: resolve(root, "components") },
+      { find: "auth", replacement: resolve(root, "components","auth") },
+      { find: "common", replacement: resolve(root, "components","common") },
+      { find: "landing", replacement: resolve(root, "components","landing") },
+      //page part
+      { find: "page", replacement: resolve(root, "page") },
       { find: "layout", replacement: resolve(root, "layout") },
-      { find: "content", replacement: resolve(root, "content") },
+      //worker part
+      { find: "ui", replacement: resolve(root, "lib", "ui") },
+      { find: "util", replacement: resolve(root, "lib", "utils") },
+      { find: "service", replacement: resolve(root, "lib", "services") },
+      
     ],
   },
   build: {

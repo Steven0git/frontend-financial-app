@@ -2,6 +2,6 @@
 
 @layer components {
   .footer-link {
-    @apply hover:text-blue-500 text-xs;
+    @apply text-xs hover:text-blue-500;
   }
 }

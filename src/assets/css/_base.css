@@ -1,3 +1,4 @@
+@import url("./font.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,58 +14,57 @@
 @layer components {
   /** Main.jsx **/
   .base-main {
-    @apply px-1 overflow-x-hidden max-w-full;
+    @apply max-w-full overflow-x-hidden px-1;
   }
   .base-child {
-    @apply w-full max-w-full mt-4 px-2 py-2 mx-auto transition-all h-full md:h-screen max-h-full;
+    @apply mx-auto mt-4 h-full max-h-full w-full max-w-full px-2 py-2 transition-all md:h-screen;
   }
 
   .btn-basic {
-    @apply text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800;
+    @apply mb-2 me-2 rounded-lg border border-blue-700 px-5 py-2.5 text-center text-sm font-medium text-blue-700 hover:bg-blue-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:border-blue-500 dark:text-blue-500 dark:hover:bg-blue-500 dark:hover:text-white dark:focus:ring-blue-800;
   }
   .btn-icon {
-    @apply text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700;
+    @apply mb-2 me-2 rounded-full border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700;
   }
   .nav-icon {
-    @apply flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white;
+    @apply h-5 w-5 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white;
   }
   .breadcrumbs-children {
     @apply ms-1 text-sm font-medium text-slate-700 hover:text-blue-400 md:ms-2 dark:text-gray-400 dark:hover:text-white;
   }
   .chevron-icon {
-    @apply rtl:rotate-180 w-3 h-3 text-gray-400 mx-1;
+    @apply mx-1 h-3 w-3 text-gray-400 rtl:rotate-180;
   }
   /** FORM UI **/
   .form-section {
-    @apply bg-gray-50 dark:bg-gray-900 w-full max-w-full mt-4;
+    @apply mt-4 w-full max-w-full bg-gray-50 dark:bg-gray-900;
   }
   .form-section-child-a {
-    @apply flex flex-col items-center justify-center px-2 py-3 mx-auto md:h-screen lg:py-0;
+    @apply mx-auto flex flex-col items-center justify-center px-2 py-3 md:h-screen lg:py-0;
   }
   .form-section-child-b {
-    @apply w-full bg-white rounded-lg shadow dark:border md:mt-0 max-w-full xl:p-0 dark:bg-gray-800 dark:border-gray-700;
+    @apply w-full max-w-full rounded-lg bg-white shadow md:mt-0 xl:p-0 dark:border dark:border-gray-700 dark:bg-gray-800;
   }
   .form-section-child-c {
-    @apply p-6 space-y-4 md:space-y-6 sm:p-8;
+    @apply space-y-4 p-6 sm:p-8 md:space-y-6;
   }
   .form-title {
-    @apply text-xl border-b-slate-500 border-b p-2 text-center opacity-90 capitalize font-bold leading-tight tracking-tight text-gray-600 md:text-2xl dark:text-white;
+    @apply border-b border-b-slate-500 p-2 text-center text-xl font-bold capitalize leading-tight tracking-tight text-gray-600 opacity-90 md:text-2xl dark:text-white;
   }
   .form-checkbox {
-    @apply w-4 h-4 opacity-80 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600
-    transition-all;
+    @apply h-4 w-4 rounded border-gray-300 bg-gray-100 text-green-600 opacity-80 transition-all focus:ring-2 focus:ring-green-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-green-600;
   }
 
   /** Accounting Page **/
   /** Tables-Show.jsx **/
   .init-table {
-    @apply relative overflow-x-auto shadow-sm sm:rounded-lg transition-all;
+    @apply relative overflow-x-auto shadow-sm transition-all sm:rounded-lg;
   }
   .tables {
-    @apply w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400;
+    @apply w-full text-left text-sm text-gray-500 rtl:text-right dark:text-gray-400;
   }
   .tables-thead {
-    @apply text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
+    @apply bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400;
   }
 }
 
