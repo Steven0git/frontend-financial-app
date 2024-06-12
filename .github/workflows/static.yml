@@ -36,8 +36,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 22.2.0
-      - name: Install pnpm
+      - name: Install pnpm v9.1.4
         uses: pnpm/action-setup@v3
+        with:
+          version: 9.1.4
       - name: Install dependencies
         run: |
           pnpm install
