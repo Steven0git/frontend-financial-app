@@ -19,7 +19,7 @@ const MainLayout = ({ children }) => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu min-h-full w-80 bg-base-200 p-4">
+          <ul className="menu flex min-h-full w-80 justify-end bg-base-200 p-4">
             {/* Sidebar content here */}
 
             <li>
@@ -35,6 +35,54 @@ const MainLayout = ({ children }) => {
                 </span>
                 <span className="nunito-semibold ms-3 text-slate-500 hover:text-gray-600 hover:underline">
                   Home
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/register"
+                className="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              >
+                <span
+                  className="nav-icon material-symbols-outlined"
+                  aria-hidden="true"
+                >
+                  person_add
+                </span>
+                <span className="nunito-semibold ms-3 text-slate-500 hover:text-gray-600 hover:underline">
+                  Signup
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/login"
+                className="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              >
+                <span
+                  className="nav-icon material-symbols-outlined"
+                  aria-hidden="true"
+                >
+                  login
+                </span>
+                <span className="nunito-semibold ms-3 text-slate-500 hover:text-gray-600 hover:underline">
+                  Login
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contact"
+                className="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              >
+                <span
+                  className="nav-icon material-symbols-outlined"
+                  aria-hidden="true"
+                >
+                  contact_support
+                </span>
+                <span className="nunito-semibold ms-3 text-slate-500 hover:text-gray-600 hover:underline">
+                  Contact
                 </span>
               </a>
             </li>
