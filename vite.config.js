@@ -41,11 +41,14 @@ export default defineConfig({
       { find: "landing", replacement: resolve(root, "components","landing") },
       //page part
       { find: "page", replacement: resolve(root, "page") },
+      { find: "secret", replacement: resolve(root, "page", "secret") },
       { find: "layout", replacement: resolve(root, "layout") },
       //worker part
       { find: "ui", replacement: resolve(root, "lib", "ui") },
       { find: "util", replacement: resolve(root, "lib", "utils") },
       { find: "service", replacement: resolve(root, "lib", "services") },
+      //route
+      { find: "route", replacement: resolve(root, "route") },
       
     ],
   },

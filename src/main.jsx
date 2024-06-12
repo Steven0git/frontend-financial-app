@@ -9,16 +9,56 @@ import ReactDOM from "react-dom/client";
  */
 import Router from "./router.jsx";
 import "css/_base.css";
+import UserManage from "route/UserManage.jsx";
 
-const App = lazy(() => import("./App.jsx"));
+/**
+ * Anonymous Page
+ */
+const Home = lazy(() => import("page/Home.jsx"));
+const Login = lazy(() => import("page/Login.jsx"));
+const Register = lazy(() => import("page/Register.jsx"));
 
+/**
+ * Router Initialize
+ */
 const root = document.getElementById("root");
 const route = new Router();
 
-route.add({
-  path: "/",
-  element: <App />,
-});
+/**
+ * User Management
+ */
+const UserManager = new UserManage(import.meta.env.VITE_TOKEN_NAME);
+if (UserManager.isUser()) {
+  route.add({
+    path: "/",
+    element: UserManager.homePage(),
+  });
+  route.add({
+    path: "/logout",
+    element: <UserPrivilage.Logout />,
+  });
+  route.add({
+    path: "/add",
+    element: UserManager.addPage(),
+  });
+  route.add({
+    path: "/show",
+    element: UserManager.showPage(),
+  });
+} else {
+  route.add({
+    path: "/",
+    element: <Home />,
+  });
+  route.add({
+    path: "/login",
+    element: <Login />,
+  });
+  route.add({
+    path: "/register",
+    element: <Register />,
+  });
+}
 
 ReactDOM.createRoot(root).render(
   <React.StrictMode>{route.getRouter()}</React.StrictMode>,
