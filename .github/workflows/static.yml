@@ -1,5 +1,6 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+# Simple workflow for deploying static content to GitHub Pages with Node.js and pnpm
+
+name: Deploy static content with Node.js and pnpm to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -22,7 +23,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  # Single deploy job with Node.js and pnpm setup
   deploy:
     environment:
       name: github-pages
@@ -31,12 +32,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install Node.js v22.2.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.2.0
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+      - name: Install dependencies
+        run: |
+          pnpm install
+      - name: Build project
+        run: |
+          pnpm run build
+      - name: Add .nojekyll file to docs
+        run: |
+          touch docs/.nojekyll
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
+          # Upload built content from docs directory
           path: './docs'
       - name: Deploy to GitHub Pages
         id: deployment
