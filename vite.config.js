@@ -17,11 +17,11 @@ export default defineConfig({
     port: 3000,
     strictPort: true,
     //open: true //auto open the browser uncommemt this line if wanted to use it
-    proxy: {
+   /* proxy: {
       "/create_user/": "http://127.0.0.1:8000/user",
       "/login/": "http://127.0.0.1:8000/user",
       "/token/validate/": "http://127.0.0.1:8000/api",
-    },
+    },*/
   },
   resolve: {
     /*
