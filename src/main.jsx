@@ -28,6 +28,7 @@ const route = new Router();
  * User Management
  */
 if (import.meta.env.VITE_IS_PRODUCTION) {
+  console.info("using VITE_IS_PRODUCTION...")
   route.add({
     path: "/",
     element: <Home />,
@@ -41,6 +42,7 @@ if (import.meta.env.VITE_IS_PRODUCTION) {
     element: <Register />,
   });
 } else {
+  console.log("dev mode....")
   const UserManager = new UserManage(import.meta.env.VITE_TOKEN_NAME);
   if (UserManager.isUser()) {
     route.add({

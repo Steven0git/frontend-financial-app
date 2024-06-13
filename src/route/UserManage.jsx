@@ -24,6 +24,7 @@ const Show = lazy(() => import("secret/Show.jsx"));
 
 class UserManage {
   constructor(tokenName) {
+    console.log("authentication start...")
     this.userData = null;
     this.isAuthenticated = false;
     this._verifyToken(tokenName);
