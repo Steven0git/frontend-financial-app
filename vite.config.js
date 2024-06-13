@@ -7,6 +7,26 @@ const root = resolve(__dirname, "src");
 const pwd = resolve(__dirname);
 const MODE = process.env.NODE_ENV
 const PRODUCTION_BASE_URL = "/frontend-financial-app"
+
+const serverConfiguration = {
+  development: {
+    host: "127.0.0.1",
+    port: 3000,
+    strictPort: true,
+    //open: true //auto open the browser uncommemt this line if wanted to use it
+    proxy: {
+      "/create_user/": "http://127.0.0.1:8000/user",
+      "/login/": "http://127.0.0.1:8000/user",
+      "/token/validate/": "http://127.0.0.1:8000/api",
+    },
+  },
+  production: {
+    host: "127.0.0.1",
+    port: 3000,
+    strictPort: true,
+  }
+}
+
 export default defineConfig({
   plugins: [react()],
   /*
@@ -14,17 +34,7 @@ export default defineConfig({
    *              + port: 8000
    *              + host: 127.0.0.1
    */
-  server: {
-    host: "127.0.0.1",
-    port: 3000,
-    strictPort: true,
-    //open: true //auto open the browser uncommemt this line if wanted to use it
-    /* proxy: {
-      "/create_user/": "http://127.0.0.1:8000/user",
-      "/login/": "http://127.0.0.1:8000/user",
-      "/token/validate/": "http://127.0.0.1:8000/api",
-    },*/
-  },
+  server: serverConfiguration[MODE],
   resolve: {
     /*
      * Make the "import" alias.

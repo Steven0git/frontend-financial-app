@@ -3,6 +3,8 @@ import Header from "common/Header.jsx";
 
 import Footer from "common/Footer.jsx";
 import Main from "common/Main.jsx";
+import Link from "common/Link.jsx";
+
 const MainLayout = ({ children }) => {
   return (
     <>
@@ -19,73 +21,12 @@ const MainLayout = ({ children }) => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu flex min-h-full w-80 justify-end bg-base-200 p-4">
+          <ul className="menu flex min-h-full w-80 justify-start bg-base-200 p-4">
             {/* Sidebar content here */}
-
-            <li>
-              <a
-                href="/"
-                className="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >
-                <span
-                  className="nav-icon material-symbols-outlined"
-                  aria-hidden="true"
-                >
-                  home
-                </span>
-                <span className="nunito-semibold ms-3 text-slate-500 hover:text-gray-600 hover:underline">
-                  Home
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="/register"
-                className="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >
-                <span
-                  className="nav-icon material-symbols-outlined"
-                  aria-hidden="true"
-                >
-                  person_add
-                </span>
-                <span className="nunito-semibold ms-3 text-slate-500 hover:text-gray-600 hover:underline">
-                  Signup
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="/login"
-                className="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >
-                <span
-                  className="nav-icon material-symbols-outlined"
-                  aria-hidden="true"
-                >
-                  login
-                </span>
-                <span className="nunito-semibold ms-3 text-slate-500 hover:text-gray-600 hover:underline">
-                  Login
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="/contact"
-                className="group flex items-center rounded-lg p-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-              >
-                <span
-                  className="nav-icon material-symbols-outlined"
-                  aria-hidden="true"
-                >
-                  contact_support
-                </span>
-                <span className="nunito-semibold ms-3 text-slate-500 hover:text-gray-600 hover:underline">
-                  Contact
-                </span>
-              </a>
-            </li>
+            <Link name="Home" href="/" icon="home" />
+            <Link name="Signup" href="/register" icon="person_add" />
+            <Link name="Signin" href="/login" icon="login" />
+            <Link name="Contact" href="/contact" icon="contact_support" />
           </ul>
         </div>
       </div>
