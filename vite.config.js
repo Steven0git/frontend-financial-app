@@ -52,6 +52,7 @@ export default defineConfig({
       
     ],
   },
+  base: "/frontend-financial-app",
   build: {
     /*
      * This is build options.
@@ -102,4 +103,5 @@ export default defineConfig({
     },
   },
   envDir: resolve(pwd, "env"),
+
 });
