@@ -1,9 +1,5 @@
 import React from "react";
 
-let $root =
-  import.meta.env.VITE_IS_PRODUCTION == "true"
-    ? `${import.meta.env.VITE_PRODUCTION_BASE_URL}/public/image/`
-    : "/public/image/";
 const CARD_IMAGE_DEFAULT = "no-img.jpg"; // Default image placeholder
 
 const Card = ({
@@ -13,7 +9,7 @@ const Card = ({
   isNew = false,
   isTag = null,
 }) => {
-  const patch_image = `${$root}/${image}`;
+  const patch_image = `/image/${image}`;
   // Input Validation
   const validateInput = () => {
     let isValid = true;

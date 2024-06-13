@@ -1,11 +1,7 @@
 import React from "react";
 
 export default function FeatureCard({ title, description, image, url }) {
-  let $root =
-    import.meta.env.VITE_IS_PRODUCTION == "true"
-      ? `${import.meta.env.VITE_PRODUCTION_BASE_URL}/public/image/`
-      : "/public/image/";
-  let img = `${$root}/${image}`;
+  let img = `/image/${image}`;
 
   return (
     <>

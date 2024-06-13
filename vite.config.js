@@ -80,7 +80,7 @@ export default defineConfig({
     target: "esnext",
     emptyOutDir: true,
     rollupOptions: {
-      input: ["./index.html"],
+      input: ["./index.html","./404.html"],
       output: {
         entryFileNames: "public/js/[name]-[hash].js",
         chunkFileNames: "public/js/[name]-[hash].js",
