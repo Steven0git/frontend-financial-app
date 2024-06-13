@@ -6,15 +6,7 @@ export default {
   },
 
   daisyui: {
-    themes: [
-      "light",
-      "dark",
-      "cupcake",
-      "dracula",
-      "sunset",
-      "business",
-      "helloween",
-    ],
+    themes: ["cupcake", "dracula", "sunset", "business", "helloween"],
   },
-  plugins: [require("daisyui")],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };

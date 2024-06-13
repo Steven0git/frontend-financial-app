@@ -1,12 +1,17 @@
 import React from "react";
 
 export default function FeatureCard({ title, description, image, url }) {
-  let img = `/image/${image}`;
+  let $root =
+    import.meta.env.VITE_IS_PRODUCTION == "true"
+      ? `${import.meta.env.VITE_PRODUCTION_BASE_URL}/public/image/`
+      : "/public/image/";
+  let img = `${$root}/${image}`;
+
   return (
     <>
       <section id="feature">
         <div
-          className="title card flex w-full items-center justify-center px-4 shadow-xl"
+          className="title card skeleton flex w-full items-center justify-center px-4 shadow-xl"
           data-swiper-parallax="-1800"
         >
           <img

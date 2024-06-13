@@ -4,9 +4,9 @@ import { resolve } from "path";
 
 // setup as the root sources of code & components
 const root = resolve(__dirname, "src");
-const pwd = resolve(__dirname);
-const MODE = process.env.NODE_ENV
-const PRODUCTION_BASE_URL = "/frontend-financial-app"
+const pwd = resolve(__dirname)
+const MODE = process.env.NODE_ENV;
+const PRODUCTION_BASE_URL = "/frontend-financial-app";
 
 const serverConfiguration = {
   development: {
@@ -24,8 +24,8 @@ const serverConfiguration = {
     host: "127.0.0.1",
     port: 3000,
     strictPort: true,
-  }
-}
+  },
+};
 
 export default defineConfig({
   plugins: [react()],
@@ -45,7 +45,7 @@ export default defineConfig({
 
       //assets part
       { find: "css", replacement: resolve(root, "assets", "css") },
-      { find: "img", replacement: resolve(root, "public", "image") },
+      { find: "img", replacement: resolve(root, "assets", "image") },
       //components part
       { find: "component", replacement: resolve(root, "components") },
       { find: "auth", replacement: resolve(root, "components", "auth") },
@@ -63,7 +63,7 @@ export default defineConfig({
       { find: "route", replacement: resolve(root, "route") },
     ],
   },
-  base: MODE == "development" ? "/":PRODUCTION_BASE_URL,
+  base: MODE == "development" ? "/" : PRODUCTION_BASE_URL,
   build: {
     /*
      * This is build options.

@@ -1,6 +1,10 @@
 import React from "react";
 
-const CARD_IMAGE_DEFAULT = "/image/no-img.jpg"; // Default image placeholder
+let $root =
+  import.meta.env.VITE_IS_PRODUCTION == "true"
+    ? `${import.meta.env.VITE_PRODUCTION_BASE_URL}/public/image/`
+    : "/public/image/";
+const CARD_IMAGE_DEFAULT = "no-img.jpg"; // Default image placeholder
 
 const Card = ({
   title,
@@ -9,11 +13,11 @@ const Card = ({
   isNew = false,
   isTag = null,
 }) => {
+  const patch_image = `${$root}/${image}`;
   // Input Validation
   const validateInput = () => {
     let isValid = true;
     const errors = [];
-
     if (!title || title.trim() === "") {
       isValid = false;
       errors.push("Title is required and cannot be empty.");
@@ -24,7 +28,7 @@ const Card = ({
       errors.push("Content is required and cannot be empty.");
     }
 
-    if (!image) {
+    if (!patch_image) {
       isValid = false;
       errors.push("Image URL must be a valid http(s) address.");
     }
@@ -53,11 +57,13 @@ const Card = ({
   return (
     <div className="card w-auto bg-base-100 shadow-xl">
       <figure>
-        <img src={image} alt={title} />
+        <img src={patch_image} alt={title} />
       </figure>
       <div className="card-body">
         <h2 className="nunito card-title font-bold capitalize">
-          {image == CARD_IMAGE_DEFAULT ? "dumbass need some image!" : title}
+          {patch_image == CARD_IMAGE_DEFAULT
+            ? "dumbass need some image!"
+            : title}
           {isNew && <div className="badge badge-secondary">NEW</div>}
         </h2>
         <p>{content}</p>

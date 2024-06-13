@@ -5,7 +5,7 @@ const About = () => {
     title: "Effortlessly Manage Your Money", // Clear benefit
     content:
       "Our Personal Accounting App makes it easy to track income, expenses, and stay on top of your finances.", // Explains functionalit
-    image: "/image/headline.jpg",
+    image: "headline.jpg",
   };
   const whatWeDoCard = {
     title: "Take Control of Your Finances", // Action-oriented title
@@ -29,7 +29,7 @@ const About = () => {
           <div className="block px-2">
             <div
               data-aos="flip-down"
-              className="mb-2 mt-6 flex flex-row flex-wrap justify-center"
+              className="skeleton mb-2 mt-6 flex flex-row flex-wrap justify-center"
             >
               <Card {...introCard} />
             </div>
