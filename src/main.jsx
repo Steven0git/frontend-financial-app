@@ -27,22 +27,23 @@ const route = new Router();
 /**
  * User Management
  */
-if (import.meta.env.VITE_IS_PRODUCTION) {
-  console.info("using VITE_IS_PRODUCTION...")
+if (import.meta.env.VITE_IS_PRODUCTION == "true") {
+  const BASE_URL = import.meta.env.VITE_PRODUCTION_BASE_URL;
+  console.info("using VITE_IS_PRODUCTION...");
   route.add({
-    path: "/",
+    path: `${BASE_URL}/`,
     element: <Home />,
   });
   route.add({
-    path: "/login",
+    path: `${BASE_URL}/login`,
     element: <Login />,
   });
   route.add({
-    path: "/register",
+    path: `${BASE_URL}/register`,
     element: <Register />,
   });
 } else {
-  console.log("dev mode....")
+  console.log("dev mode....");
   const UserManager = new UserManage(import.meta.env.VITE_TOKEN_NAME);
   if (UserManager.isUser()) {
     route.add({

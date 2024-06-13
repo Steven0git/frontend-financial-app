@@ -5,6 +5,8 @@ import { resolve } from "path";
 // setup as the root sources of code & components
 const root = resolve(__dirname, "src");
 const pwd = resolve(__dirname);
+const MODE = process.env.NODE_ENV
+const PRODUCTION_BASE_URL = "/frontend-financial-app"
 export default defineConfig({
   plugins: [react()],
   /*
@@ -51,7 +53,7 @@ export default defineConfig({
       { find: "route", replacement: resolve(root, "route") },
     ],
   },
-  base: "/frontend-financial-app",
+  base: MODE == "development" ? "/":PRODUCTION_BASE_URL,
   build: {
     /*
      * This is build options.
