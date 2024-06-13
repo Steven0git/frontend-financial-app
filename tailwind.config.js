@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{vue,jsx,tsx}'],
+  content: ["./src/**/*.{vue,jsx,tsx}"],
   theme: {
     extend: {},
   },
@@ -13,10 +13,8 @@ export default {
       "dracula",
       "sunset",
       "business",
-      'helloween'
+      "helloween",
     ],
   },
   plugins: [require("daisyui")],
-  
-}
-
+};

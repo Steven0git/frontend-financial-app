@@ -27,25 +27,7 @@ const route = new Router();
 /**
  * User Management
  */
-const UserManager = new UserManage(import.meta.env.VITE_TOKEN_NAME);
-if (UserManager.isUser()) {
-  route.add({
-    path: "/",
-    element: UserManager.homePage(),
-  });
-  route.add({
-    path: "/logout",
-    element: <UserPrivilage.Logout />,
-  });
-  route.add({
-    path: "/add",
-    element: UserManager.addPage(),
-  });
-  route.add({
-    path: "/show",
-    element: UserManager.showPage(),
-  });
-} else {
+if (import.meta.env.VITE_IS_PRODUCTION) {
   route.add({
     path: "/",
     element: <Home />,
@@ -58,6 +40,39 @@ if (UserManager.isUser()) {
     path: "/register",
     element: <Register />,
   });
+} else {
+  const UserManager = new UserManage(import.meta.env.VITE_TOKEN_NAME);
+  if (UserManager.isUser()) {
+    route.add({
+      path: "/",
+      element: UserManager.homePage(),
+    });
+    route.add({
+      path: "/logout",
+      element: <UserPrivilage.Logout />,
+    });
+    route.add({
+      path: "/add",
+      element: UserManager.addPage(),
+    });
+    route.add({
+      path: "/show",
+      element: UserManager.showPage(),
+    });
+  } else {
+    route.add({
+      path: "/",
+      element: <Home />,
+    });
+    route.add({
+      path: "/login",
+      element: <Login />,
+    });
+    route.add({
+      path: "/register",
+      element: <Register />,
+    });
+  }
 }
 
 ReactDOM.createRoot(root).render(

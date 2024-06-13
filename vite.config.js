@@ -17,7 +17,7 @@ export default defineConfig({
     port: 3000,
     strictPort: true,
     //open: true //auto open the browser uncommemt this line if wanted to use it
-   /* proxy: {
+    /* proxy: {
       "/create_user/": "http://127.0.0.1:8000/user",
       "/login/": "http://127.0.0.1:8000/user",
       "/token/validate/": "http://127.0.0.1:8000/api",
@@ -30,15 +30,15 @@ export default defineConfig({
      */
     alias: [
       { find: "@", replacement: root },
-      
+
       //assets part
       { find: "css", replacement: resolve(root, "assets", "css") },
       { find: "img", replacement: resolve(root, "public", "image") },
       //components part
       { find: "component", replacement: resolve(root, "components") },
-      { find: "auth", replacement: resolve(root, "components","auth") },
-      { find: "common", replacement: resolve(root, "components","common") },
-      { find: "landing", replacement: resolve(root, "components","landing") },
+      { find: "auth", replacement: resolve(root, "components", "auth") },
+      { find: "common", replacement: resolve(root, "components", "common") },
+      { find: "landing", replacement: resolve(root, "components", "landing") },
       //page part
       { find: "page", replacement: resolve(root, "page") },
       { find: "secret", replacement: resolve(root, "page", "secret") },
@@ -49,7 +49,6 @@ export default defineConfig({
       { find: "service", replacement: resolve(root, "lib", "services") },
       //route
       { find: "route", replacement: resolve(root, "route") },
-      
     ],
   },
   base: "/frontend-financial-app",
@@ -103,5 +102,4 @@ export default defineConfig({
     },
   },
   envDir: resolve(pwd, "env"),
-
 });
