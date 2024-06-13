@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function FeatureCard({ title, description, image, url }) {
-  let img = `/image/${image}`;
+  let img =import.meta.env.VITE_IS_PRODUCTION == "true" ? `${import.meta.env.VITE_PRODUCTION_BASE_URL}/image/${image}`:`/image/${image}`;;
 
   return (
     <>

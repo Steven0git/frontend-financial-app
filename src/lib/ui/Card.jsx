@@ -9,7 +9,8 @@ const Card = ({
   isNew = false,
   isTag = null,
 }) => {
-  const patch_image = `/image/${image}`;
+  
+  const patch_image = import.meta.env.VITE_IS_PRODUCTION == "true" ? `${import.meta.env.VITE_PRODUCTION_BASE_URL}/image/${image}`:`/image/${image}`;
   // Input Validation
   const validateInput = () => {
     let isValid = true;
